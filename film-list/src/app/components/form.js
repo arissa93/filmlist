@@ -2,7 +2,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 
-export default function AddMovieForm({ addMovie }) {
+export default function AddMovieForm({ addMovie, movies }) {
     const [title, setTitle] = useState('');
     const [rating, setRating] = useState('0');
 
@@ -21,6 +21,8 @@ export default function AddMovieForm({ addMovie }) {
             alert("Du måste ange titel för att kunna spara filmen");
         } else if (rating === "0") {
             alert("Du måste ange ett betyg för att kunna spara filmen");
+        } else if (movies.some(movie => movie.title.trim().toLowerCase() === title.trim().toLowerCase())) {
+            alert("Filmen finns redan i din lista. Försök igen")
         } else {
             const movie = {
                 title,
