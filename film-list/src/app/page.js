@@ -14,10 +14,14 @@ export default function Home() {
     setMovies((prevMovies) => [...prevMovies, movie]);
   };
 
-  console.log(movies)
+  console.log(movies);
 
   function deleteMovie(title) {
     setMovies(movies.filter((movie) => movie.title !== title));
+  }
+
+  function orderRating(a, b) {
+    return a > b ? -1 : 0;
   }
 
   return (
@@ -34,8 +38,8 @@ export default function Home() {
           <Movie key={movie.title} movie={movie} deleteMovie={deleteMovie}/>
         ))}
       </ul>
-      <OrderByAlphaButton />
-      <OrderByGradeButton />
+      <OrderByAlphaButton movies={movies} setMovies={setMovies}/>
+      <OrderByGradeButton orderRating={orderRating} movies={movies} setMovies={setMovies}/>
     </div>
   );
 }
