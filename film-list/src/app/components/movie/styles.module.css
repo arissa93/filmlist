@@ -1,0 +1,17 @@
+li.movieLi {
+    list-style: none;
+    background-color: #eee;
+    margin: 1rem 0;
+    padding: 20px;
+    box-shadow: 0 0 5px #999;
+}
+
+li.movieLi > img {
+    float: right;
+    height: 25px;
+    margin-left: 5px;
+}
+
+.deleteIcon {
+    cursor: pointer;
+}
