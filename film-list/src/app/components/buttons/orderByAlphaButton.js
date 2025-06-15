@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 
 export default function OrderByAlphaButton({ movies, setMovies }) {
     const sortByAlpha = () => {
-        movies.sort((a, b) => a.title.localeCompare(b.title));
+        movies.sort((a, b) => a.title.localeCompare(b.title, 'sv'));
         setMovies([...movies]);
     }
     
