@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 export default function AddMovieForm({ addMovie }) {
     const [title, setTitle] = useState('');
-    const [rating, setRating] = useState('0')
+    const [rating, setRating] = useState('0');
 
     const handleTitle = function (e) {
         setTitle(e.target.value);
@@ -39,7 +39,7 @@ export default function AddMovieForm({ addMovie }) {
                 <legend>Lägg till en film</legend>
 
                 <label htmlFor="title-field">Titel:</label>
-                <input type="text" className="form-control" value={title} onChange={handleTitle}></input>
+                <input type="text" className="form-control" placeholder="Titel här..." value={title} onChange={handleTitle}></input>
 
                 <label htmlFor="rating-field">Betyg:</label>
 
