@@ -16,19 +16,14 @@ export default function Home() {
 
   console.log(movies)
 
-  function rating(title) {
-    pass
+  function deleteMovie(title) {
+    setMovies(movies.filter((movie) => movie.title !== title));
   }
-
-  function deleteMovie (title) {
-    setMovies(movies.filter((movie) => movie.title !== title))
-  }
-  
 
   return (
     <div className="container">
       <h1>Min filmlista</h1>
-      <AddMovieForm addMovie={addMovie} />
+      <AddMovieForm addMovie={addMovie}/>
 
       <hr></hr>
 
@@ -36,7 +31,7 @@ export default function Home() {
 
       <ul id={styles.movies}>
         {movies.map((movie) => (
-          <Movie key={movie.title} movie={movie} rating={rating} deleteMovie={deleteMovie} />
+          <Movie key={movie.title} movie={movie} deleteMovie={deleteMovie}/>
         ))}
       </ul>
       <OrderByAlphaButton />
