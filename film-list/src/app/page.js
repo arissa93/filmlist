@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <div className="container">
       <h1>Min filmlista</h1>
-      <AddMovieForm addMovie={addMovie}/>
+      <AddMovieForm addMovie={addMovie} movies={movies}/>
 
       <hr></hr>
 
