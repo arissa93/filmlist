@@ -1,3 +1,4 @@
+'use client'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 
@@ -18,19 +19,18 @@ export default function AddMovieForm({ addMovie }) {
 
         if (title === "") {
             alert("Du måste ange titel för att kunna spara filmen");
-        }
-        if (rating === "0") {
+        } else if (rating === "0") {
             alert("Du måste ange ett betyg för att kunna spara filmen");
+        } else {
+            const movie = {
+                title,
+                rating
+            };
+
+            addMovie(movie)
+            setTitle('')
+            setRating('0')
         }
-
-        const movie = {
-            title,
-            rating
-        };
-
-        addMovie(movie)
-        setTitle('')
-        setRating('0')
     };
 
     return (
